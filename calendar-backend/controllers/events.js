@@ -99,7 +99,7 @@ const eliminarEvento = async (req, res = response) => {
             });
         }
 
-        await Evento.findOneAndDelete(eventoId, { new: true });
+        await Evento.findOneAndDelete({ _id: eventoId }, { new: true });
 
         return res.status(200).json(
             {

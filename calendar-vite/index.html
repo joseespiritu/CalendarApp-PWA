@@ -23,5 +23,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+      const isProduction = import.meta.env.VITE_MODE === 'prod';
+
+      if (isProduction && 'serviceWorker' in navigator) {
+        // navigator.serviceWorker.register('sw.js');
+        navigator.serviceWorker.register('sw-template.js');
+      }
+    </script>
   </body>
 </html>
